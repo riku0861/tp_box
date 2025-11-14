@@ -1,0 +1,37 @@
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+h1, h2 {
+  color: #fff;
+  text-align: center;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+.region {
+  margin-bottom: 30px;
+}
+label {
+  display: block;
+  margin: 5px 0;
+  font-size: 1em;
+}
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+.progress {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+select, button {
+  font-size: 1em;
+  padding: 5px 10px;
+  margin: 10px;
+}

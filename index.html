@@ -2,34 +2,26 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>test page</title>
-  <!-- スマホ画面サイズに合わせる設定 -->
+  <title>宝箱チェックアプリ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-    }
-    #tpImage {
-      max-width: 90%;   /* 画面幅に合わせて拡大 */
-      height: auto;     /* 縦横比を維持 */
-      margin-top: 20px;
-    }
-    h1 {
-      font-size: 2em;   /* 見出しを大きめに */
-    }
-    p {
-      font-size: 1.2em; /* 本文も少し大きめに */
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img id="tpImage" src="tp.jpg" alt="画像が表示されます">
-  <h1>テストページ (^v^)ノ</h1>
-  <p>トワプリの宝箱管理をするWEBアプリを作成したい。。。</p>
+  <div class="container">
+    <h1>トワプリ宝箱チェック</h1>
+
+    <div>
+      <label>セーブデータ選択:
+        <select id="saveSelect"></select>
+      </label>
+      <button onclick="createNewSave()">新しいデータを保存</button>
+      <button onclick="deleteSave()">選択中のデータを削除</button>
+    </div>
+
+    <div class="progress" id="progress">取得状況: 0 / 0</div>
+    <div id="checklist"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
