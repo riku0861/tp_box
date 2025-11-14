@@ -6,19 +6,18 @@ async function loadCSV() {
   const res = await fetch("box_list.csv");
   const text = await res.text();
 
-  // 空行を除外し、3列に分割
   const lines = text.trim().split("\n").filter(l => l.trim() !== "").map(l => l.split(","));
 
-  // データ構造を明示
   data = lines.map(([region, type, detail], i) => ({
     id: i,
-    region: region.trim(),
-    type: type.trim(),
-    detail: detail.trim()
+    region: region?.trim() || "不明",
+    type: type?.trim() || "不明",
+    detail: detail?.trim() || "不明"
   }));
 
   loadSaveList();
 }
+
 
 
 function loadSaveList() {
@@ -107,4 +106,5 @@ function renderProgress(checked = 0, total = 0) {
 }
 
 loadCSV();
+
 
