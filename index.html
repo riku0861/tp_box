@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ログインテストページ</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    #login, #welcome { display: none; }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h2>ログインしてください</h2>
+    <input type="password" id="password" placeholder="パスワード">
+    <button onclick="checkPassword()">ログイン</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <div id="welcome">
+    <h1>こんにちは！</h1>
+    <p>ログイン成功です。</p>
+  </div>
+
+  <script>
+    document.getElementById("login").style.display = "block";
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const correct = "test123"; // ←ここを好きなパスワードに変更
+      if (input === correct) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("welcome").style.display = "block";
+      } else {
+        document.getElementById("error").textContent = "パスワードが違います";
+      }
+    }
+  </script>
+</body>
+</html>
