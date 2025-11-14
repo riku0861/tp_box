@@ -4,8 +4,19 @@
   <meta charset="UTF-8">
   <title>ログインテストページ</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    #login, #welcome { display: none; }
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      transition: background-color 0.5s;
+    }
+    #login, #welcome {
+      display: none;
+    }
+    #tpImage {
+      width: 300px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -17,8 +28,9 @@
   </div>
 
   <div id="welcome">
-    <h1>こんにちは！</h1>
-    <p>ログイン成功です。</p>
+    <img id="tpImage" src="tp.jpg" alt="画像が表示されます">
+    <h1 style="color:white;">こんにちは！</h1>
+    <p style="color:white;">ログイン成功です。</p>
   </div>
 
   <script>
@@ -28,6 +40,7 @@
       const input = document.getElementById("password").value;
       const correct = "8228"; // ←ここを好きなパスワードに変更
       if (input === correct) {
+        document.body.style.backgroundColor = "black";
         document.getElementById("login").style.display = "none";
         document.getElementById("welcome").style.display = "block";
       } else {
@@ -37,4 +50,3 @@
   </script>
 </body>
 </html>
-
