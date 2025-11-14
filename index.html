@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>test page</title>
+  <!-- スマホ画面サイズに合わせる設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background-color: black;
       color: white;
       font-family: sans-serif;
       text-align: center;
-      margin-top: 50px;
+      margin: 0;
+      padding: 20px;
     }
     #tpImage {
-      width: 300px;
+      max-width: 90%;   /* 画面幅に合わせて拡大 */
+      height: auto;     /* 縦横比を維持 */
       margin-top: 20px;
+    }
+    h1 {
+      font-size: 2em;   /* 見出しを大きめに */
+    }
+    p {
+      font-size: 1.2em; /* 本文も少し大きめに */
     }
   </style>
 </head>
@@ -23,4 +33,3 @@
   <p>トワプリの宝箱管理をするWEBアプリを作成したい。。。</p>
 </body>
 </html>
-
